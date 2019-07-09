@@ -8,8 +8,8 @@ class Thumbnail {
      * @param {string} profession 
      * @param {string} image 
      */
-    constructor(titre,author,date,profession,image) {
-        this.title = titre;
+    constructor(title,author,date,profession,image) {
+        this.title = title;
         this.author = author;
         this.date = date;
         this.profession = profession;

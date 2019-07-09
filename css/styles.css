@@ -1,0 +1,23 @@
+body{
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+.texts-valign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    height: 2.5rem;
+    font-size:1.4rem;
+    width: 50%;
+}
+#display-results{
+    width: 50%;
+    background-color: #fff;
+    position: absolute;
+}
