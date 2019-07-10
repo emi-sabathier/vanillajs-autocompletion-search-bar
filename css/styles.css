@@ -88,7 +88,16 @@ section .infos-texts{
     section{
         width: 100%;
     }
-}
-@media all and (max-width: 480px){
-
+    header{
+        flex-direction: column;
+    }
+    .search-bar::after{
+        width: 100%;
+    }
+    .search-bar input{
+        width: 100%;
+    }
+    #display-results{
+        width: 100%;
+    }
 }
