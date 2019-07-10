@@ -1,7 +1,7 @@
 
 class Thumbnail {
     /**
-     * Create the thumbnail with the properties
+     * Create a thumbnail with properties
      * @param {string} titre 
      * @param {string} author 
      * @param {string} date 
