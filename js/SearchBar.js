@@ -1,8 +1,8 @@
 class SearchBar {
-  constructor(thumbnailsArray, keywordId) {
-    this.keyword = document.getElementById(keywordId);
+  constructor(thumbnailsArray, inputSearchId) {
+    this.inputSearch = document.getElementById(inputSearchId);
     this.thumbnailsList = thumbnailsArray;
-    this.keyword.addEventListener('input', this.search.bind(this));
+    this.inputSearch.addEventListener('input', this.search.bind(this));
   }
   /**
    * Search the keyword
@@ -13,7 +13,7 @@ class SearchBar {
   search(e) {
     this.results = [];
     this.displayResults = document.getElementById('display-results');
-    
+
     this.thumbnailsList.forEach(thumbnail => {
       let keyword = e.target.value.toLowerCase();
       if (keyword !== '') {

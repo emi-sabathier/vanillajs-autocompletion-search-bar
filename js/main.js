@@ -47,4 +47,4 @@ thumbnailsArray.forEach((thumbnail) => {
         textsContainer.appendChild(pProfession);
 });
 
-const searchBar = new SearchBar(thumbnailsArray, 'keyword');
+const searchBar = new SearchBar(thumbnailsArray, 'input-search');
