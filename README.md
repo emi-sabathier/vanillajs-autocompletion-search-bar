@@ -2,7 +2,7 @@
 
 ## Test technique pour une offre de développeur front-end
 
-Technologie choisie : Javascript
+**Technologie choisie : Javascript**
 
 - Pas de framework
 - Pas de librairie
@@ -10,17 +10,17 @@ Technologie choisie : Javascript
 - POO
 - Pas de BDD
 
-Fonctionnalités :
+**Fonctionnalités :**
 
 - Barre de recherche avec autocompletion
 - Affiche les vignettes quand on clique sur un résultat
 
 Installation : 
 
-- Pas d'installation : no framework/libraries were used
+- Pas d'installation : no framework/libraries utilisés
 - Télécharger le dossier Github
 
-Choix : 
+**Choix :**
 
 - J'ai choisi d'éviter d'utiliser un framework ou des librairies, comme c'est un petit projet.Je n'ai pas voulu alourdir la page en ajoutant JQuery, Bootstrap ou autre. Je pense que dans ce cas, ce n'était pas judicieux de passer par ces techno.
 - J'ai utilisé la POO pour avoir un code clair, et lisible pour les autres. Il peut être réutilisable pour un autre projet : Par exemple, changer les données du tableau thumbnailsArray, et l'id de la barre de recherche.
@@ -29,7 +29,7 @@ Choix :
 
 ## Technical test for an application (front-end developer)
 
-Technology used : Javascript
+**Technology used : Javascript**
 
 - No framework
 - No libraries
@@ -37,17 +37,17 @@ Technology used : Javascript
 - OOP
 - No DB
 
-Functionalities :
+**Functionalities :**
 
 - Autocomplete search bar
 - Display the thumbnails when click on a result
 
-Installation : 
+**Installation :** 
 
 - No required installation : no framework/libraries were used
 - Download the project from Github
 
-Choices : 
+**Choices :** 
 
 - I choose to avoid to use a framework and libraries, as it's not a big project. I did not want to make it heavy or slow by adding jquery, bootstrap or other. I think in this case, it was not mandatory at all.
 - I used the OOP to have a clearer code and make it readable for other people. It could be use again for another project : For example, just change the data inside the thumbnailArray, and the input id.
