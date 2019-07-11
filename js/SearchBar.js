@@ -13,6 +13,7 @@ class SearchBar {
   search(e) {
     this.results = [];
     this.displayResults = document.getElementById('display-results');
+    
     this.thumbnailsList.forEach(thumbnail => {
       let keyword = e.target.value.toLowerCase();
       if (keyword !== '') {
