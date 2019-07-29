@@ -3,6 +3,8 @@ class SearchBar {
     this.inputSearch = document.getElementById(inputSearchId);
     this.thumbnailsList = thumbnailsArray;
     this.inputSearch.addEventListener('input', this.search.bind(this));
+    this.displayResults = document.getElementById('display-results');
+    this.results = [];
   }
   /**
    * Search the keyword
@@ -11,35 +13,31 @@ class SearchBar {
    * @param {event} e
    */
   search(e) {
-    this.results = [];
-    this.displayResults = document.getElementById('display-results');
+    let keyword = e.target.value.toLowerCase();
+    
+    this.results = keyword === '' ? [] : this.thumbnailsList.map(e => e.title).filter(e => e.toLowerCase().includes(keyword))
 
-    this.thumbnailsList.forEach(thumbnail => {
-      let keyword = e.target.value.toLowerCase();
-      if (keyword !== '') {
-        let thumbnailTitle = thumbnail.title.toLowerCase();
-        let isFound = thumbnailTitle.includes(keyword);
-
-        if (isFound) {
-          this.results.push(thumbnail.title);
-        }
-      } else {
-        this.displayResults.style.boxShadow = 'none';
-        this.displayResults.innerHTML = '';
-        let section = document.querySelectorAll('section');
-        section.forEach(section => {
-          section.style.display = 'flex';
-        });
-      }
-    });
-    this.displayResults.innerHTML = '';
-    this.createResultsListAndFilter();
+    if (this.results.length > 0) {
+      this.createResultsListAndFilter();
+    } else {
+      this.resetDisplayResults();
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'flex';
+      });
+    }
   }
+  
+  resetDisplayResults() {
+    this.displayResults.style.boxShadow = 'none';
+    this.displayResults.textContent = '';
+  }
+  
   /**
    * Creates list of results (li) using results[]
    * Filter the thumbnails
    */
   createResultsListAndFilter() {
+    this.displayResults.textContent = '';
     this.results.forEach(result => {
       // creating each li
       let li = document.createElement('li');
@@ -48,23 +46,11 @@ class SearchBar {
       this.displayResults.style.boxShadow = '1px 0 2px 1px #D1D1D1';
 
       // adding click event
-      li.addEventListener('click', e => {        
-        this.displayResults.style.boxShadow = 'none';
-        let targetLi = e.target.innerText;
-        let hiddenInputList = document.querySelectorAll('section input');
-
-        /* there're hidden input containing the title in the HTML
-        *  if the selected result IS DIFFERENT from a hidden input title : hide the parent (section)
-        */
-        hiddenInputList.forEach(input => {
-          let hiddenInputText = input.value;
-          this.displayResults.innerHTML = '';
-
-          if (targetLi !== hiddenInputText) {
-            input.parentNode.style.display = 'none';
-          } else {
-            input.parentNode.style.display = 'flex';
-          }
+      li.addEventListener('click', e => {
+        this.resetDisplayResults(); 
+        document.querySelectorAll('section h3').forEach(h3El => {
+          h3El.parentNode.parentNode.style.display = e.target.textContent !== h3El.textContent ? 'none' : 'flex';
+          
         });
       });
     });
