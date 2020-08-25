@@ -1,6 +1,4 @@
-# Auto-completion search bar
-
-## Test technique pour une offre de développeur front-end - Angular
+# Test technique front-end/angular : Auto-completion search bar
 
 **Technologie choisie : Javascript**
 
